@@ -31,7 +31,8 @@ section.center {
   margin: 0 auto;
 }
 section .aa {
-  font-family: monospace;
+  font-family: "Arial", "Courier", sans-serif;
+  font-weight: normal;
 }
 section h1 {
   font-size: 3em;
