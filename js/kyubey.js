@@ -1,5 +1,6 @@
 (function(){
-  jQuery.kyubey = function(){
+  jQuery.kyubey = function(config){
+    var config = $.extend({animation: "fadeIn"}, config);
 
     // 画面に合わせて高さを調整 
     function sizing() {
@@ -24,43 +25,35 @@
       });
     };
 
+    // ページ表示時の処理
+    function show(jObj) {
+      $("section:visible").removeClass("current").hide();
+      if (config.animation == "fadeIn") {
+        jObj.fadeIn();
+      } else if (config.animation == "slideDown") {
+        jObj.slideDown();
+      }
+      jObj.css("display", "block")
+          .addClass("current");
+      paging();
+    };
+
     // ページの移動 
     function goPrev() {
       if ($("section.current").prev().is("section")) {
-        $("section:visible").hide();
-        $("section.current").removeClass("current")
-                            .prev("section")
-                            .fadeIn()
-                            .css("display", "block")
-                            .addClass("current");
-        paging();
+        show($("section.current").prev());
       }
     };
     function goNext() {
       if ($("section.current").next().is("section")) {
-        $("section:visible").hide();
-        $("section.current").removeClass("current")
-                            .next("section")
-                            .fadeIn()
-                            .css("display", "block")
-                            .addClass("current");
-        paging();
+        show($("section.current").next());
       }
     };
     function goLast() {
-      goEdge("last")
-      paging();
+      show($("section:last"));
     };
     function goFirst() {
-      goEdge("first");
-      paging();
-    };
-    function goEdge(edge) {
-      $("section").hide()
-                  .removeClass("current");
-      $("section:"+edge).fadeIn()
-                        .css("display", "block")
-                        .addClass("current");
+      show($("section:first"));
     };
 
     // #page にページ番号を挿入 
