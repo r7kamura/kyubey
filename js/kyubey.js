@@ -84,7 +84,6 @@
       goFirst();
       bindKey();
     };
-    
 
     init();
   };
