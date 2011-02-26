@@ -1,10 +1,7 @@
-// スライド表示用のjQueryプラグイン
-// author: NAKAMURA Ryo
-
 (function(){
   jQuery.kyubey = function(){
 
-    // 画面に合わせて高さを調整
+    // 画面に合わせて高さを調整 
     function sizing() {
       var h = window.innerHeight;
       var w = window.innerWidth;
@@ -12,28 +9,29 @@
       $("section.center").css("max-height", h + "px");
     };
 
-    // キーバインドの設定
+    // キーバインドの設定 
     function bindKey() {
       $(window).keyup(function(e){
-        if(e.keyCode==37) {         // ←
+        if(e.keyCode==37) {         // ← 
           goPrev();
-        } else if(e.keyCode==38) {  // ↑
+        } else if(e.keyCode==38) {  // ↑ 
           goFirst();
-        } else if(e.keyCode==39) {  // →
+        } else if(e.keyCode==39) {  // → 
           goNext();
-        } else if(e.keyCode==40) {  // ↓
+        } else if(e.keyCode==40) {  // ↓ 
           goLast();
         }
       });
     };
 
-    // ページの移動
+    // ページの移動 
     function goPrev() {
       if ($("section.current").prev().is("section")) {
         $("section:visible").hide();
         $("section.current").removeClass("current")
                             .prev("section")
                             .fadeIn()
+                            .css("display", "block")
                             .addClass("current");
         paging();
       }
@@ -44,6 +42,7 @@
         $("section.current").removeClass("current")
                             .next("section")
                             .fadeIn()
+                            .css("display", "block")
                             .addClass("current");
         paging();
       }
@@ -60,10 +59,11 @@
       $("section").hide()
                   .removeClass("current");
       $("section:"+edge).fadeIn()
+                        .css("display", "block")
                         .addClass("current");
     };
 
-    // #page にページ番号を割り当てる
+    // #page にページ番号を割り当てる 
     function paging() {
       var pageNum = $("section").length;
       var i = 1;
@@ -77,7 +77,7 @@
       $("#page").text(i + " / " + pageNum);
     };
 
-    // ページ読込み時用の初期化動作
+    // ページ読込み時用の初期化動作 
     function init() {
       sizing();
       paging();
