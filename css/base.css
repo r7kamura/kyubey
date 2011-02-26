@@ -3,6 +3,9 @@
   margin: 0;
   padding: 0;
 }
+ul {
+  padding-left: 1.2em;
+}
 
 html {
   height: 100%;
@@ -20,10 +23,17 @@ body {
   position: fixed;
   bottom: 0;
   right: 20px;
+  color: #ccc;
 }
 
 section.center {
   text-align: center;
   margin: 0 auto;
 }
-
+section .aa {
+  font-family: monospace;
+}
+section h1 {
+  font-size: 3em;
+  line-height: 1.2;
+}

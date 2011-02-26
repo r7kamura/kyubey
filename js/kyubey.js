@@ -1,5 +1,5 @@
 // スライド表示用のjQueryプラグイン
-
+// author: NAKAMURA Ryo
 
 (function(){
   jQuery.kyubey = function(){
@@ -17,16 +17,12 @@
       $(window).keyup(function(e){
         if(e.keyCode==37) {         // ←
           goPrev();
-          console.log("←");
         } else if(e.keyCode==38) {  // ↑
-          goHome();
-          console.log("↑");
+          goFirst();
         } else if(e.keyCode==39) {  // →
           goNext();
-          console.log("→");
         } else if(e.keyCode==40) {  // ↓
           goLast();
-          console.log("↓");
         }
       });
     };
@@ -37,7 +33,7 @@
         $("section:visible").hide();
         $("section.current").removeClass("current")
                             .prev("section")
-                            .show()
+                            .fadeIn()
                             .addClass("current");
         paging();
       }
@@ -47,7 +43,7 @@
         $("section:visible").hide();
         $("section.current").removeClass("current")
                             .next("section")
-                            .show()
+                            .fadeIn()
                             .addClass("current");
         paging();
       }
@@ -56,14 +52,14 @@
       goEdge("last")
       paging();
     };
-    function goHome() {
+    function goFirst() {
       goEdge("first");
       paging();
     };
     function goEdge(edge) {
       $("section").hide()
                   .removeClass("current");
-      $("section:"+edge).show()
+      $("section:"+edge).fadeIn()
                         .addClass("current");
     };
 
@@ -81,11 +77,11 @@
       $("#page").text(i + " / " + pageNum);
     };
 
-    // ページ読込み時の初期化動作
+    // ページ読込み時用の初期化動作
     function init() {
       sizing();
       paging();
-      goHome();
+      goFirst();
       bindKey();
     };
     
