@@ -1,0 +1,29 @@
+* {
+  border: 0;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  height: 100%;
+  width: 100%;
+  display: table;
+}
+body {
+  height: 100%;
+  display: table-cell;
+  vertical-align: middle;
+  font-size: 30px;
+}
+
+#page {
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+}
+
+section.center {
+  text-align: center;
+  margin: 0 auto;
+}
+

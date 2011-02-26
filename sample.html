@@ -4,18 +4,28 @@
 	<meta charset="UTF-8">
 	<title>SampleSlide</title>
   <link rel="stylesheet" type="text/css" media="all" href="./css/base.css" />
-  <script type="text/Javascript" src="./js/lib/jquery.min.js"></script>
-  <script type="text/Javascript" src="./js/kyubey.js"></script>
+  <script type="text/javascript" src="./js/lib/jquery-1.5.1.min.js"></script>
+  <script type="text/javascript" src="./js/kyubey.js"></script>
+  <script type="text/javascript">
+    $(function(){
+      $.kyubey();    
+    });
+  </script>
 </head>
 <body>
-  <section>
-    <h1>one</h1>
-  </section>
-  <section>
-  	<h1>two</h1>
-  </section>
-  <section>
-  	<h1>three</h1>
-  </section>
+  <div id="wrapper">
+    <section>
+      <h1>one</h1>
+      <p>ヴぁーーーーーーーーー</p>
+    </section>
+    <section class="center">
+    	<h1>two</h1>
+    </section>
+    <section>
+    	<h1>three</h1>
+    </section>
+  
+    <p id="page"></p>
+  </div>
 </body>
 </html>
