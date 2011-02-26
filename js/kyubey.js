@@ -63,7 +63,7 @@
                         .addClass("current");
     };
 
-    // #page にページ番号を割り当てる 
+    // #page にページ番号を挿入 
     function paging() {
       var pageNum = $("section").length;
       var i = 1;
