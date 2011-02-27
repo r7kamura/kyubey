@@ -12,5 +12,9 @@ section.center { text-align:center; margin:0 auto; }
 
 /* someDesign... */
 body { font-size:30px; }
-section h1 { font-size:3em; line-height:1.2; }
-section .aa { font-family:"Courier", "Arial", sans-serif; font-weight:normal; } /* for QB's AA */
+section { padding:1em 20% 0; }
+section.center { padding:0; }
+section h1 { font-size:3em; line-height:1.2; text-align: center; }
+section .aa { font-family:"Courier", "Arial", sans-serif; font-weight:normal; } /* for AA of QB */
+section .em { padding: 0.5em 0; color:white; background-color:black; } /* to emphasize h1 */ 
+section pre { overflow: auto; }
