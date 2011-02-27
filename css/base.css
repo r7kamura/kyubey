@@ -1,20 +1,24 @@
 /* reset */
 * { border:0; margin:0; padding:0; }
-ul { padding-left:1.2em; }
+ul { padding-left:1.2em; text-align: left; }
 
 /* centering(vertical&horizontal) */
 html { height:100%; width:100%; display:table; }
-body { height:100%; display:table-cell; vertical-align:middle; }
-section.center { text-align:center; margin:0 auto; }
+body { height:100%; display:table-cell; vertical-align:middle; overflow: hidden; }
+section { text-align:center; }
 
 /* fixPagePosition */
 #page { position:fixed; bottom:0; right:1em; color:#ccc; }
 
 /* someDesign... */
 body { font-size:30px; }
-section { padding:1em 20% 0; }
-section.center { padding:0; }
-section h1 { font-size:3em; line-height:1.2; text-align: center; }
+section h1 { font-size:3em; line-height:1.2; }
+section pre { overflow: auto; }
+section a { text-decoration: none; }
+section a:visited { color:#00E; }
 section .aa { font-family:"Courier", "Arial", sans-serif; font-weight:normal; } /* for AA of QB */
 section .em { padding: 0.5em 0; color:white; background-color:black; } /* to emphasize h1 */ 
-section pre { overflow: auto; }
+section table { border-spacing: 0; border-collapse: collapse; margin: 0 auto;}
+section table th { background-color: #eee; }
+section table th,
+section table td { border: 1px solid #ccc; padding: 0.2em; }

@@ -6,8 +6,7 @@
     function sizing() {
       var h = window.innerHeight;
       var w = window.innerWidth;
-      $("section").not(".center").css("height", h + "px");
-      $("section.center").css("max-height", h + "px");
+      $("section").css("max-height", h + "px");
     };
 
     // キーバインドの設定 
@@ -70,9 +69,32 @@
       $("#page").text(i + " / " + pageNum);
     };
 
+    // div.hatena内の文字列をはてな記法でHTML化する
+    function hatenize() {
+      var hatena = new Hatena({sectionanchor: " "});
+      $(".hatena").each(function(){
+        hatena.parse($(this).text());
+        $(this).html(hatena.html());
+      });
+      upHeadingLevel();
+    };
+
+    // 見出し(h1, h2, etc...)のレベルを上げる
+    function upHeadingLevel(level) {
+      if (level == undefined) {
+        level = 2
+      }
+      $.each([1, 2, 3], function(i){
+        $(".hatena h" + (i+level)).replaceWith(function(){
+          return "<h"+i+">" + $(this).html() + "</h"+i+">";
+        });
+      });
+    };
+
     // ページ読込み時用の初期化動作 
     function init() {
       sizing();
+      hatenize();
       paging();
       goFirst();
       bindKey();

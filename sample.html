@@ -7,6 +7,7 @@
   <link rel="stylesheet" type="text/css" href="./css/prettify.css" />
   <script type="text/javascript" src="./js/lib/jquery-1.5.1.min.js"></script>
   <script type="text/javascript" src="./js/lib/prettify.js"></script>
+  <script type="text/javascript" src="./js/lib/text-hatena0-2.js"></script>
   <script type="text/javascript" src="./js/kyubey.js"></script>
   <script type="text/javascript">
     $(function(){
@@ -18,12 +19,18 @@
 </head>
 <body>
   <div id="wrapper">
-    <section class="center">
+    <section class="hatena">
+* はてな記法
+** div.hatenaの中だけ限定的に使えます((見出し/リスト/表組み/脚注くらいしか使えません))
+|*表組み|とか|
+    </section>
+
+    <section>
     <h2>スライドツールを自作しました</h2>
     <p>右矢印キー(→)で次のページへ</p>
     </section>
 
-    <section class="center">
+    <section>
     <h1>
       <span class="aa" style="">( <span style="color:red">◕</span> ‿‿ <span style="color:red">◕</span> )</span>
       kyubey
@@ -31,17 +38,17 @@
     <h2>HTML/CSS/JS製の小さなスライドツール</h2>
     </section>
 
-    <section class="center">
+    <section>
     	<h1>kyubey?</h1>
       <h2>スライド → プレゼン → 起業 → 契約 → QB</h2>
     	<p>※incubator: 起業に関する支援を行う者</p>
     </section>
 
-    <section class="center">
+    <section>
     <h1 class="em">feature</h1>
     </section>
 
-    <section class="center">
+    <section>
     <h1>key bind</h1>
     <h2>Prev(←), Next(→), First(↑), Last(↓)</h2>
 <pre class="prettyprint lang-js linenums"
@@ -61,7 +68,7 @@
 </pre>
     </section>
 
-    <section class="center">
+    <section>
     	<h1>page number</h1>
       <h2>look at lower right</h2>
 <pre class="prettyprint lang-js linenums"
@@ -80,7 +87,7 @@
 </pre>
     </section>
 
-    <section class="center">
+    <section>
     	<h1>animation</h1>
       <h2>thanks to jQuery animation</h2>
 <pre class="prettyprint lang-js linenums"
@@ -98,7 +105,7 @@
 </pre>
     </section>
 
-    <section class="center">
+    <section>
     <h1>syntax highlight</h1>
     <h2>thanks to  google-code-prettify</h2>
 <pre class="prettyprint lang-ruby linenums"
@@ -116,11 +123,11 @@ fizzbuzz(100)
 </pre>
     </section>
 
-    <section class="center">
+    <section>
     <h1 class="em">Usage</h1>
     </section>
 
-    <section class="center">
+    <section>
     <h1>1. include js&css</h1>
 <pre class="prettyprint lang-html linenums"
 >&lt;link rel="stylesheet" type="text/css" href="./css/base.css" />
@@ -131,7 +138,7 @@ fizzbuzz(100)
 </pre>
     </section>
 
-    <section class="center">
+    <section>
     <h1>2. call kyubey</h1>
 <pre class="prettyprint lang-html linenums"
 >&lt;script type="text/javascript"&gt;
@@ -143,10 +150,10 @@ fizzbuzz(100)
 </pre>
     </section>
 
-    <section class="center">
+    <section>
     	<h1>3. write a html</h1>
 <pre class="prettyprint lang-html linenums"
->&lt;section class="center"&gt;
+>&lt;section&gt;
   &lt;h1&gt;This Just Isn't Right&lt;/h1&gt;
   &lt;h2&gt;Konna no Zettai Okashiiyo&lt;/h2&gt;
   &lt;p&gt;
@@ -157,18 +164,18 @@ fizzbuzz(100)
 </pre>
     </section>
 
-    <section class="center">
+    <section>
     	<h1 class="em">fabrication cost</h1>
     </section>
 
-    <section class="center">
+    <section>
     	<h1>codes</h1>
       	<p>CSS: 20 lines</p>
       	<p>JavaScript: 84 lines</p>
       	<p>HTML(thisSlides): 204 lines</p>
     </section>
 
-    <section class="center">
+    <section>
     	<h1>files</h1>
 <pre style="width: 500px; margin:0 auto; text-align: left;"
 >kyubey
@@ -187,12 +194,12 @@ fizzbuzz(100)
 </pre>
     </section>
 
-    <section class="center">
+    <section>
     	<h1>times</h1>
       <h2>7 hours</h2>
     </section>
 
-    <section class="center">
+    <section>
     <h2>
       <span class="aa" style="">( <span style="color:red">◕</span> ‿‿ <span style="color:red">◕</span> )</span>
       thank you for reading.
