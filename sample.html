@@ -19,12 +19,6 @@
 </head>
 <body>
   <div id="wrapper">
-    <section class="hatena">
-* はてな記法
-** div.hatenaの中だけ限定的に使えます((見出し/リスト/表組み/脚注くらいしか使えません))
-|*表組み|とか|
-    </section>
-
     <section>
     <h2>スライドツールを自作しました</h2>
     <p>右矢印キー(→)で次のページへ</p>
@@ -120,6 +114,24 @@
 end
 
 fizzbuzz(100)
+</pre>
+    </section>
+
+    <section>
+    <div class="hatena">
+* Hatena
+class="hatena"の中に書いたはてな記法が変換されます
+    </div>
+<pre class="prettyprint linenums lang-html">
+* Hatena
+class="hatena"の中に書いたはてな記法が変換されます
+ ↓
+&lt;div class="hatena"&gt;
+  &lt;div class="section"&gt;
+    &lt;h1&gt;はてな記法&lt;/h1&gt;
+    &lt;p&gt;class="hatena"の中にはてな記法で書くと変換されます&lt;p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
 </pre>
     </section>
 
