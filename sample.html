@@ -8,12 +8,12 @@
   <script type="text/javascript" src="./js/lib/jquery-1.5.1.min.js"></script>
   <script type="text/javascript" src="./js/lib/prettify.js"></script>
   <script type="text/javascript" src="./js/lib/text-hatena0-2.js"></script>
+  <script type="text/javascript" src="./js/lib/textile.js"></script>
   <script type="text/javascript" src="./js/kyubey.js"></script>
   <script type="text/javascript">
     $(function(){
       // $.kyubey({animation: "slideDown"});
       $.kyubey({animation: "fadeIn"});
-      prettyPrint();
     });
   </script>
 </head>
@@ -134,6 +134,32 @@ class="hatena"の中に書いたはてな記法が変換されます
   &lt;div class="section"&gt;
     &lt;h1&gt;はてな記法&lt;/h1&gt;
     &lt;p&gt;class="hatena"の中にはてな記法で書くと変換されます&lt;p&gt;
+  &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+    </section>
+
+    <section>
+    <div class="textile">
+h1. textile
++class="textile"の中に書いたtextile記法が変換されます+
+    </div>
+<pre class="prettyprint linenums lang-html">
+&lt;div class="textile"&gt;
+h1. textile
++class="textile"の中に書いたtextile記法が変換されます+
+&lt;/div&gt;
+
+ ↓
+
+&lt;div class="textile"&gt;
+  &lt;div class="section"&gt;
+    &lt;h1&gt;textile記法&lt;/h1&gt;
+    &lt;p&gt;
+      &lt;ins style="text-align:center;"&gt;
+        class="textile"の中に書いたtextile記法が変換されます
+      &lt;/ins&gt;
+    &lt;p&gt;
   &lt;/div&gt;
 &lt;/div&gt;
 </pre>

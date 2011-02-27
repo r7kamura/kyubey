@@ -69,7 +69,7 @@
       $("#page").text(i + " / " + pageNum);
     };
 
-    // div.hatena内の文字列をはてな記法でHTML化する
+    // .hatena内の文字列をはてな記法でHTML化する
     function hatenize() {
       var hatena = new Hatena({sectionanchor: " "});
       $(".hatena").each(function(){
@@ -91,13 +91,23 @@
       });
     };
 
+    // .textile内の文字列をtextile記法でHTML化する
+    function textile() {
+      $(".textile").each(function(){
+        var html = convert($(this).text());
+        $(this).html(html);
+      });
+    };
+
     // ページ読込み時用の初期化動作 
     function init() {
       sizing();
       hatenize();
+      textile();
       paging();
       goFirst();
       bindKey();
+      prettyPrint();
     };
 
     init();
