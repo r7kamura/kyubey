@@ -92,11 +92,22 @@
       });
     };
 
+    function textileFull() {
+      $(".textileFull").each(function(){
+        $(this).html(convert($(this).text()));
+      });
+      $(".textileFull h1").each(function(){
+        $(this).nextUntil("h1").andSelf().wrapAll("<section>");
+      });
+      $(".textileFull").replaceWith($(".textileFull").html());
+    };
+
     // ページ読込み時用の初期化動作 
     function init() {
       sizing();
       hatenize();
       textile();
+      textileFull();
       paging();
       goFirst();
       bindKey();
