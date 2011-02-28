@@ -64,48 +64,63 @@
     };
 
     // .hatena内の文字列をはてな記法でHTML化する
-    function hatenize() {
+    function hatenize(selector) {
+      selector = selector || ".hatena";
       var hatena = new Hatena({sectionanchor: " "});
-      $(".hatena").each(function(){
+      $(selector).each(function(){
         hatena.parse($(this).text());
         $(this).html(hatena.html());
       });
-      upHeadingLevel();
+      $(".section").each(function(){ // はてな記法は勝手にdiv.sectionを付けるので消す 
+        $(this).replaceWith($(this).html());
+      });
+      upHeadingLevel(selector, 2);
+    };
+
+    // .hatenaのsectionに分けてあげる版
+    function hatenizeFull() {
+      var selector = ".hatenaFull";
+      hatenize(selector);
+      separateSection(selector);
     };
 
     // 見出し(h1, h2, etc...)のレベルを上げる
-    function upHeadingLevel(level) {
-      if (level == undefined) {
-        level = 2;
-      }
-      $.each([1, 2, 3], function(i){
-        $(".hatena h" + (i+level)).replaceWith(function(){
+    function upHeadingLevel(selector, level) {
+      $.each([1, 2, 3, 4], function(i){
+        $(selector + " h" + (i + level)).replaceWith(function(){
           return "<h"+i+">" + $(this).html() + "</h"+i+">";
         });
       });
     };
 
     // .textile内の文字列をtextile記法でHTML化する
-    function textile() {
-      $(".textile").each(function(){
+    function textile(selector) {
+      selector = selector || ".textile";
+      $(selector).each(function(){
         $(this).html(convert($(this).text()));
       });
     };
 
+    // .textileのsectionに分けてあげる版
     function textileFull() {
-      $(".textileFull").each(function(){
-        $(this).html(convert($(this).text()));
-      });
-      $(".textileFull h1").each(function(){
+      var selector = ".textileFull";
+      textile(selector);
+      separateSection(selector);
+    };
+
+    // h1タグごとにsectionに分ける
+    function separateSection(selector, func) {
+      $(selector + " h1").each(function(){
         $(this).nextUntil("h1").andSelf().wrapAll("<section>");
       });
-      $(".textileFull").replaceWith($(".textileFull").html());
+      $(selector).replaceWith($(selector).html());
     };
 
     // ページ読込み時用の初期化動作 
     function init() {
       sizing();
       hatenize();
+      hatenizeFull();
       textile();
       textileFull();
       paging();
