@@ -2,23 +2,23 @@
   jQuery.kyubey = function(config){
     var config = $.extend({animation: "fadeIn"}, config);
 
-    // 画面に合わせて高さを調整 
+    // 画面に合わせて高さを調整
     function sizing() {
       var h = window.innerHeight;
       var w = window.innerWidth;
       $("section").css("max-height", h + "px");
     };
 
-    // キーバインドの設定 
+    // キーバインドの設定
     function bindKey() {
       $(window).keyup(function(e){
-        if(e.keyCode==37) {         // ← 
+        if(e.keyCode==37) {         // ←
           goPrev();
-        } else if(e.keyCode==38) {  // ↑ 
+        } else if(e.keyCode==38) {  // ↑
           goFirst();
-        } else if(e.keyCode==39) {  // → 
+        } else if(e.keyCode==39) {  // →
           goNext();
-        } else if(e.keyCode==40) {  // ↓ 
+        } else if(e.keyCode==40) {  // ↓
           goLast();
         }
       });
@@ -37,7 +37,7 @@
       paging();
     };
 
-    // ページの移動 
+    // ページの移動
     function goPrev() {
       var prevSection = $("section.current").prev();
       if (prevSection.is("section")) {
@@ -57,7 +57,7 @@
       show($("section:first"));
     };
 
-    // #page にページ番号を挿入 
+    // #page にページ番号を挿入
     function paging() {
       var pageNum = $("section").length;
       var i = 1;
@@ -83,9 +83,7 @@
 
     // 見出し(h1, h2, etc...)のレベルを上げる
     function upHeadingLevel(level) {
-      if (level == undefined) {
-        level = 2
-      }
+      level = level || 2;
       $.each([1, 2, 3], function(i){
         $(".hatena h" + (i+level)).replaceWith(function(){
           return "<h"+i+">" + $(this).html() + "</h"+i+">";
@@ -101,7 +99,7 @@
       });
     };
 
-    // ページ読込み時用の初期化動作 
+    // ページ読込み時用の初期化動作
     function init() {
       sizing();
       hatenize();
