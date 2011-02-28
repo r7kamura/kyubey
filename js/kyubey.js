@@ -26,27 +26,21 @@
 
     // ページ表示時の処理
     function show(jObj) {
-      $("section:visible").removeClass("current").hide();
-      if (config.animation == "fadeIn") {
-        jObj.fadeIn();
-      } else if (config.animation == "slideDown") {
-        jObj.slideDown();
+      if (jObj.is("section")) {
+        $("section:visible").removeClass("current").hide();
+        $.fn[config.animation].apply(jObj);
+        jObj.css("display", "block")
+            .addClass("current");
+        paging();
       }
-      jObj.css("display", "block")
-          .addClass("current");
-      paging();
     };
 
     // ページの移動 
     function goPrev() {
-      if ($("section.current").prev().is("section")) {
-        show($("section.current").prev());
-      }
+      show($("section.current").prev());
     };
     function goNext() {
-      if ($("section.current").next().is("section")) {
-        show($("section.current").next());
-      }
+      show($("section.current").next());
     };
     function goLast() {
       show($("section:last"));
