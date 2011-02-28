@@ -1,6 +1,6 @@
-(function(){
-  jQuery.kyubey = function(config){
-    var config = $.extend({animation: "fadeIn"}, config);
+(function($){
+  $.kyubey = function(args){
+    var config = $.extend({animation: "fadeIn"}, args);
 
     // 画面に合わせて高さを調整 
     function sizing() {
@@ -76,7 +76,7 @@
     // 見出し(h1, h2, etc...)のレベルを上げる
     function upHeadingLevel(level) {
       if (level == undefined) {
-        level = 2
+        level = 2;
       }
       $.each([1, 2, 3], function(i){
         $(".hatena h" + (i+level)).replaceWith(function(){
@@ -88,8 +88,7 @@
     // .textile内の文字列をtextile記法でHTML化する
     function textile() {
       $(".textile").each(function(){
-        var html = convert($(this).text());
-        $(this).html(html);
+        $(this).html(convert($(this).text()));
       });
     };
 
