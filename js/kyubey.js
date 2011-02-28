@@ -39,13 +39,15 @@
 
     // ページの移動 
     function goPrev() {
-      if ($("section.current").prev().is("section")) {
-        show($("section.current").prev());
+      var prevSection = $("section.current").prev();
+      if (prevSection.is("section")) {
+        show(prevSection);
       }
     };
     function goNext() {
-      if ($("section.current").next().is("section")) {
-        show($("section.current").next());
+      var nextSection = $("section.current").next();
+      if (nextSection.is("section")) {
+        show(nextSection);
       }
     };
     function goLast() {
