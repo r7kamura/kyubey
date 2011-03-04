@@ -27,10 +27,10 @@
     // ページ表示時の処理
     function show(jObj) {
       if (jObj.is("section")) {
+        $("section:visible .lazy").hide();
         $("section:visible").removeClass("current").hide();
         $.fn[config.animation].apply(jObj);
-        jObj.css("display", "block")
-            .addClass("current");
+        jObj.css("display", "block").addClass("current");
         paging();
       }
     };
@@ -40,7 +40,7 @@
       show($("section.current").prev());
     };
     function goNext() {
-      show($("section.current").next());
+      showLazy() || show($("section.current").next());
     };
     function goLast() {
       show($("section:last"));
@@ -48,6 +48,11 @@
     function goFirst() {
       show($("section:first"));
     };
+
+    // ページ内に.lazyがあれば1つ表示してtrue値を返す
+    function showLazy() {
+      return $("section.current .lazy:hidden:first").slideDown().length;
+    }
 
     // #page にページ番号を挿入 
     function paging() {
