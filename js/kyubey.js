@@ -121,6 +121,12 @@
       $(selector).replaceWith($(selector).html());
     };
 
+    // Clickで移動できるようにする(ページ番号クリックで最初へ戻る)
+    function bindClick() {
+      $("section").click(goNext);
+      $("#page").click(goFirst);
+    };
+
     // ページ読込み時用の初期化動作 
     function init() {
       sizing();
@@ -131,6 +137,7 @@
       paging();
       goFirst();
       bindKey();
+      bindClick();
       prettyPrint();
     };
 
