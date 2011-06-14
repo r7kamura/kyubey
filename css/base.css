@@ -5,7 +5,7 @@ article, aside, canvas, details, figcaption, figure, header, footer, hgroup, men
 
 /* centering(vertical&horizontal) */
 html              { height: 100%; width: 100%; display: table; }
-body              { height: 100%; display: table-cell; vertical-align: middle; overflow: hidden; }
+body              { height: 100%; display: table-cell; vertical-align: middle; }
 section           { text-align: center }
 
 /* fixPagePosition */

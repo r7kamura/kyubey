@@ -1,2 +1,25 @@
-個人用にスライドツールが欲しかったので、JavaScript(結果的にはjQueryの)練習を兼ねて作りました。
-sample.htmlとjs/kyubey.jsのコメントに拙い説明を書いています。
+** About
+jQueryを利用したスライドツール。
+個人的にjQueryの勉強用途に作ったものを公開。
+
+
+** Create
+<section>
+  some contents...
+</section>
+
+
+** View
+Keyboard
+  →      : Next
+  ←      : Prev
+  ↑      : First
+  ↓      : Last
+
+Click
+  Center  : Next
+  PageNum : First
+
+
+** Sample
+http://arumakan.org/kyubey/sample.html
